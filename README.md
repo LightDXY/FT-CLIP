@@ -57,29 +57,6 @@ Recent studies have shown that CLIP has achieved remarkable success in performin
         <td>---- </td>
     </tr>
     <tr>
-      <td colspan="6"><em>MIM with different prediction target</em></td>
-    </tr>
-    <tr>
-        <td>BEiT</td> 
-        <td>83.2 </td> <td>---- </td><td>---- </td><td>---- </td><td>---- </td>
-    </tr>
-    <tr>
-        <td>MAE</td> 
-        <td>83.6 </td> <td>---- </td><td>---- </td><td>---- </td><td>---- </td>
-    </tr>
-    <tr>
-        <td>CAE</td> 
-        <td>83.8 </td> <td>---- </td><td>---- </td><td>---- </td><td>---- </td>
-    </tr>
-    <tr>
-        <td>BootMAE</td> 
-        <td>84.2 </td> <td>---- </td><td>---- </td><td>---- </td><td>---- </td>
-    </tr>
-    <tr>
-        <td>PeCo</td> 
-        <td>84.5 </td> <td>---- </td><td>---- </td><td>---- </td><td>---- </td>
-    </tr>
-    <tr>
       <td colspan="6"><em>MIM with CLIP as prediction target</em></td>
     </tr>
     <tr>
