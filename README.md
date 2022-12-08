@@ -76,10 +76,6 @@ Recent studies have shown that CLIP has achieved remarkable success in performin
         <td>85.5 </td>  <td>---- </td><td>---- </td><td>---- </td><td>---- </td>
     </tr>
     <tr>
-        <td>EVA</td> 
-        <td>85.5 </td> <td>---- </td><td>---- </td><td>---- </td><td>---- </td>
-    </tr>
-    <tr>
       <td colspan="6"><em>Fine-tuning CLIP directly</em></td>
     </tr>
     <tr>
