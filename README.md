@@ -1,6 +1,6 @@
 # FT-CLIP
 
-This repo is the official implementation of ["CLIP Itself is a Strong Fine-tuner: Achieving 85.7% and 88.0% Top-1 Accuracy with ViT-B and ViT-L on ImageNet"](https://arxiv.org/abs/).
+This repo is the official implementation of ["CLIP Itself is a Strong Fine-tuner: Achieving 85.7% and 88.0% Top-1 Accuracy with ViT-B and ViT-L on ImageNet"](https://arxiv.org/abs/2212.06138).
 
 ## Introduction
 
@@ -101,7 +101,7 @@ If you use this code for your research, please cite our paper.
 @article{dong2022ftclip,
   title={CLIP Itself is a Strong Fine-tuner: Achieving 85.7% and 88.0% Top-1 Accuracy with ViT-B and ViT-L on ImageNet},
   author={Dong, Xiaoyi and Bao, Jianmin and Zhang, Ting and Chen, Dongdong and Shuyang, Gu and Zhang, Weiming and Yuan, Lu and Chen, Dong and Wen, Fang and Yu, Nenghai},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2212.06138},
   year={2022}
 }
 ```
