@@ -80,7 +80,7 @@ Recent studies have shown that CLIP has achieved remarkable success in performin
     </tr>
     <tr>
         <td>FT-CLIP(ours)</td> 
-        <td> 84.7 </td>
+        <td> 85.7 </td>
         <td> 86.6</td>
         <td> ----</td>
         <td> 88.0</td>
