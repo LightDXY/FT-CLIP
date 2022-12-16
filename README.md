@@ -91,7 +91,52 @@ Recent studies have shown that CLIP has achieved remarkable success in performin
  
 ## Fine-tuning configs
 
-Coming soon.
+The CLIP-Base/16 model can be fine-tuned on ImageNet-1k using 8 A100-40GB:
+
+```bash
+MODEL=CLIP_B16
+OUTPUT_DIR=/path/to/save/your_model
+DATA_PATH=/path/to/imagenet
+
+echo $OUTPUT_DIR
+mkdir -p $OUTPUT_DIR
+cp $0 $OUTPUT_DIR
+
+OMP_NUM_THREADS=1 python -m torch.distributed.launch --nproc_per_node=8 run_class_finetuning.py \
+    --model ${MODEL} --data_path $DATA_PATH \
+    --input_size 224 \
+    --finetune True \
+    --num_workers 8 \
+    --output_dir ${OUTPUT_DIR} \
+    --batch_size 256 --lr 6e-4 --update_freq 1 \
+    --warmup_epochs 10 --epochs 50 \
+    --layer_decay 0.6 \
+    --drop_path 0 \
+    --dist_eval --eval_all --no_save_ckpt \
+    --enable_deepspeed \
+    --clip_mean_and_std \
+    --layer_scale_init_value 0 \
+    --abs_pos_emb --disable_rel_pos_bias \
+    --weight_decay 0.05 --mixup 0 --cutmix 0 \
+    --nb_classes 1000  --model_prefix visual.\
+    --model_ema --model_ema_decay 0.9998 \
+    2>&1 | tee -a ${OUTPUT_DIR}/log.txt
+
+```
+- `--batch_size`: batch size per GPU.
+- Effective batch size = `number of GPUs` * `--batch_size` * `--update_freq`. So in the above example, the effective batch size is `8*256*1 = 2048`.
+- `--lr`: base learning rate.
+- `--layer_decay`: layer-wise learning rate decay. The LR of i_th layer is `lr * layer_decay ** i.
+- `--warmup_epochs`: learning rate warmup epochs.
+- `--epochs`: total pre-training epochs.
+- `--clip_mean_and_std`: use the CLIP norm factor, instead of the ImageNet norm.
+
+see [scripts/](https://github.com/LightDXY/FT-CLIP/tree/main/scripts/) for more config
+
+# Acknowledgments
+
+This repository is modified from [BEiT](https://github.com/microsoft/unilm/tree/master/beit), built using the [timm](https://github.com/rwightman/pytorch-image-models) library, the [DeiT](https://github.com/facebookresearch/deit) repository and the [CLIP](https://github.com/openai/CLIP) repository. The CLIP model file is modified from [DeCLIP](https://github.com/Sense-GVT/DeCLIP).
+
 
 
 
