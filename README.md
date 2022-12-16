@@ -88,6 +88,13 @@ Recent studies have shown that CLIP has achieved remarkable success in performin
     </tr>
 </table>
 
+## Setup
+[PyTorch](https://pytorch.org/), [Timm](https://github.com/rwightman/pytorch-image-models) and [DeepSpeed](https://github.com/microsoft/DeepSpeed) is needed. CUDA version or GPU difference may slightly influence the results.
+```bash
+pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+pip install --user timm==0.4.12
+pip install --user deepspeed==0.4.0
+```
  
 ## Fine-tuning configs
 
@@ -126,7 +133,7 @@ OMP_NUM_THREADS=1 python -m torch.distributed.launch --nproc_per_node=8 run_clas
 - `--batch_size`: batch size per GPU.
 - Effective batch size = `number of GPUs` * `--batch_size` * `--update_freq`. So in the above example, the effective batch size is `8*256*1 = 2048`.
 - `--lr`: base learning rate.
-- `--layer_decay`: layer-wise learning rate decay. The LR of i_th layer is `lr * layer_decay ** i.
+- `--layer_decay`: layer-wise learning rate decay. The LR of i_th layer is `lr * layer_decay ** i`.
 - `--warmup_epochs`: learning rate warmup epochs.
 - `--epochs`: total pre-training epochs.
 - `--clip_mean_and_std`: use the CLIP norm factor, instead of the ImageNet norm.
