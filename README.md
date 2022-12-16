@@ -80,11 +80,11 @@ Recent studies have shown that CLIP has achieved remarkable success in performin
     </tr>
     <tr>
         <td>FT-CLIP(ours)</td> 
-        <td> 85.7 </td>
-        <td> 86.6</td>
+        <td><a href="https://github.com/LightDXY/FT-CLIP/tree/main/logs/CLIP_B16.log">85.7 </a> </td>
+        <td><a href="https://github.com/LightDXY/FT-CLIP/tree/main/logs/CLIP_B16_384.log"> 86.6 </a> </td>
         <td> ----</td>
-        <td> 88.0</td>
-        <td> 88.3</td>
+        <td><a href="https://github.com/LightDXY/FT-CLIP/tree/main/logs/CLIP_L14.log"> 88.0 </a> </td>
+        <td><a href="https://github.com/LightDXY/FT-CLIP/tree/main/logs/CLIP_L14_336.log"> 88.3 </a> </td>
     </tr>
 </table>
 
